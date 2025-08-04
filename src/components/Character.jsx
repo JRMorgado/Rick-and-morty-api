@@ -1,15 +1,16 @@
 function Character({ character }) {
   return (
     <>
-      <div className=" rounded-lg bg-slate-700 transition duration-300 hover:scale-105 cursor-pointer w-full ">
+      <div className="rounded-lg bg-slate-700 transition duration-300 hover:scale-105 cursor-pointer w-full hover:border-4  hover:border-amber-500">
         <img
-          className="rounded-t-lg w-full"
+          className="rounded-t-lg w-full hover:rounded-none"
           src={character.image}
-          alt={`Character: ${character.image}`}
+          loading="lazy"
+          alt={`image extracted on rick and morty api`}
         />
         <div className="p-3">
           <h2
-            className="font-bold mb-5  text-lg truncate"
+            className="font-bold mb-5 text-lg truncate"
             title={character.name}
           >
             {character.name}
@@ -22,12 +23,7 @@ function Character({ character }) {
             ></span>
             {character.status} - {character.species}
           </p>
-          <p
-            className="
-                    mb-2"
-          >
-            {character.gender}
-          </p>
+          <p className="mb-2">{character.gender}</p>
           <p className="mb-2">{character.origin.name}</p>
         </div>
       </div>
